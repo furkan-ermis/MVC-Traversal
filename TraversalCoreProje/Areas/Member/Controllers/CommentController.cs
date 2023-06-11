@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TraversalCoreProje.Controllers
+namespace TraversalCoreProje.Areas.Member.Controllers
 {
-    [AllowAnonymous]
-    public class DefaultController : Controller
+    [Area("Member")]
+    [AllowAnonymous] // ŞİMDİLİK
+    public class CommentController : Controller
     {
         public IActionResult Index()
         {

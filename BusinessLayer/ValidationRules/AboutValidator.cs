@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.ValidationRules
 {
-    public class AboutValidator : AbstractValidator<About>
-    {
-        public AboutValidator()
-        {
-            RuleFor(x => x.Description).NotEmpty().WithMessage("Açıklama Kısmı Boş Geçilemez ");
-            RuleFor(x => x.Image1).NotEmpty().WithMessage("Lütfen Görsel Seçiniz");
-            RuleFor(x => x.Description).MinimumLength(50).WithMessage("Lütfen Minimum 50 karakter giriniz");
-            RuleFor(x => x.Description).MaximumLength(1500).WithMessage("Lütfen Maximum 1500 karakter giriniz");
-        }
-    }
+	public class AboutValidator : AbstractValidator<About>
+	{
+		public AboutValidator()
+		{
+			RuleFor(x => x.Description).NotEmpty().WithMessage("Açıklama Kısmı Boş Geçilemez ");
+			RuleFor(x => x.Image1).NotEmpty().WithMessage("Lütfen Görsel Seçiniz");
+			RuleFor(x => x.Description).MinimumLength(50).WithMessage("Lütfen Minimum 50 karakter giriniz");
+			RuleFor(x => x.Description).MaximumLength(1500).WithMessage("Lütfen Maximum 1500 karakter giriniz");
+		}
+	}
 }

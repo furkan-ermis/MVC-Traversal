@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+    <!-- Navbar -->
+    @await Html.PartialAsync("/Areas/Member/Views/DashboardPartial/DashboardNavbarPartial.cshtml")
+    <!-- End Navbar -->
+    <!-- Person -->
+    @await Html.PartialAsync("/Areas/Member/Views/DashboardPartial/DashboardPersonPartial.cshtml")
+    <!-- End Person -->
+    <div class="container-fluid py-4">
+        <div class="row">
+            <!-- Ayarlar -->
+            @await Component.InvokeAsync("_PlatformSetting")
+            <!-- End Ayarlar -->
+            <!-- Profile-->
+            @await Component.InvokeAsync("_ProfileInformation")
+            <!-- End Profile-->
+            <!-- GuideList-->
+            @await Component.InvokeAsync("_GuideList")
+            <!-- End GuideList-->
+            <!-- Destinations-->
+            @await Html.PartialAsync("/Areas/Member/Views/DashboardPartial/DashboardDestinationsPartial.cshtml")
+            <!-- End Destinations-->
+        </div>
+    </div>
+</div>

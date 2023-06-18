@@ -385,8 +385,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Member\Data\" />
-    <Folder Include="Areas\Member\Models\" />
     <Folder Include="wwwroot\soft-ui-dashboard\.git\objects\info\" />
     <Folder Include="wwwroot\soft-ui-dashboard\.git\objects\pack\" />
     <Folder Include="wwwroot\soft-ui-dashboard\.git\refs\tags\" />

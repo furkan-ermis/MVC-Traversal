@@ -1,0 +1,55 @@
+﻿@model Destination
+@{
+    ViewData["Title"] = "AddDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Rota Sayfası</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="City" class="control-label">Şehir</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="DayNight" class="control-label">Gün Gece</label>
+        <input asp-for="DayNight" type="text" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Price" class="control-label">Fiyat</label>
+        <input asp-for="Price" type="text" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Image" class="control-label">Ana Görsel</label>
+        <input asp-for="Image"  class="form-control"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Capacity" class="control-label">Kapasite</label>
+        <input asp-for="Capacity"  class="form-control"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="CoverImage" class="control-label">Kapap Görseli</label>
+        <input asp-for="CoverImage"  class="form-control"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Image2" class="control-label">Görsel 2</label>
+        <input asp-for="Image2" class="form-control"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Details1" class="control-label">Detay 1</label>
+        <textarea cols="30" rows="5" asp-for="Details1" placeholder="Açıklama" class="form-control"></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Details2" class="control-label">Detay 2</label>
+        <textarea cols="30" rows="5" asp-for="Details2" placeholder="Açıklama" class="form-control"></textarea>
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Oluştur</button>
+</form>

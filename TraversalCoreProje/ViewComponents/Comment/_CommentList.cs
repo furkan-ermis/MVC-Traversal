@@ -6,7 +6,7 @@ namespace TraversalCoreProje.ViewComponents.Comment
 {
     public class _CommentList : ViewComponent
     {
-        CommentManager CommentManager = new CommentManager(new EFCommentDal());
+        CommentManager CommentManager = new CommentManager(new EfCommentDal());
         public IViewComponentResult Invoke(int id)
         {
             var values = CommentManager.TGetDestinationByID(id);

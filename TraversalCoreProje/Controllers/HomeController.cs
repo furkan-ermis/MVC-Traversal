@@ -20,6 +20,7 @@ namespace TraversalCoreProje.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("burası ındex cağırıldı.");
             return View();
         }
 

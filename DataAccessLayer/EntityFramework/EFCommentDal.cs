@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EFCommentDal : GenericRepository<Comment>, ICommentDal
+    public class EfCommentDal : GenericRepository<Comment>, ICommentDal
     {
         public List<Comment> GetListCommentWithDestination()
         {

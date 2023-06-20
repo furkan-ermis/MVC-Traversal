@@ -8,7 +8,7 @@ namespace TraversalCoreProje.Controllers
 {
     public class CommentController : Controller
     {
-        CommentManager commentManager = new CommentManager(new EFCommentDal());
+        CommentManager commentManager = new CommentManager(new EfCommentDal());
 
         [HttpGet]
         public PartialViewResult AddComment()

@@ -77,10 +77,11 @@ namespace TraversalCoreProje
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
         // LOGGER ÝÇÝN DOSYAYA ILoggerFactory
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            // dosyaya yazma kodlarý
+            // logg larý dosyaya yazma kodlarý
             // --------------
             var path = Directory.GetCurrentDirectory();
             loggerFactory.AddFile($"{path}\\Logs\\Log1.txt");

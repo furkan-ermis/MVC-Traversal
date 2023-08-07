@@ -10,11 +10,14 @@
     <div class="form-group">
         <label asp-for="Name" class="control-label">Ad Soyad</label>
         <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <br />
     <div class="form-group">
         <label asp-for="Image" class="control-label">Rehber Fotoğraf</label>
         <input asp-for="Image" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+
     </div>
     <br />
     <div class="form-group">
@@ -30,6 +33,8 @@
     <div class="form-group">
         <label asp-for="Description" class="control-label">Açıklama</label>
         <input asp-for="Description" type="text" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+
     </div>
     <br />
     <button class="btn btn-outline-primary">Oluştur</button>

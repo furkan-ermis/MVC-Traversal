@@ -60,10 +60,13 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
         }
         public IActionResult ChangeToTrue(int id)
         {
+            _guideService.TChangeToTrueByGuide(id);
             return Redirect("/Admin/Guide/Index/");
         }
         public IActionResult ChangeToFalse(int id)
         {
+            _guideService.TChangeToFalseByGuide(id);
+
             return Redirect("/Admin/Guide/Index/");
         }
     }

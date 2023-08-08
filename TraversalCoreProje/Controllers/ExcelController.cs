@@ -1,4 +1,5 @@
-﻿using ClosedXML.Excel;
+﻿using BusinessLayer.Abstract;
+using ClosedXML.Excel;
 using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
@@ -15,6 +16,13 @@ namespace TraversalCoreProje.Controllers
     /// </summary>
     public class ExcelController : Controller
     {
+        private readonly IExcelService _excelService;
+
+        public ExcelController(IExcelService excelService)
+        {
+            _excelService = excelService;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -36,53 +44,12 @@ namespace TraversalCoreProje.Controllers
         }
         public IActionResult StaticExcelReport()
         {
-            ExcelPackage excel = new ExcelPackage();
-            var workSheet = excel.Workbook.Worksheets.Add("Sayfa1");
-            workSheet.Cells[1, 1].Value = "Rota";
-            workSheet.Cells[1, 2].Value = "Rehber";
-            workSheet.Cells[1, 3].Value = "Kontenjan";
-
-            workSheet.Cells[2, 1].Value = "Gürcistan Batum Turu";
-            workSheet.Cells[2, 2].Value = "Kadir Yılmaz";
-            workSheet.Cells[2, 3].Value = "50";
-
-            workSheet.Cells[3, 1].Value = "Sırbistan - Makedonya Turu";
-            workSheet.Cells[3, 2].Value = "Zeynep Öztürk";
-            workSheet.Cells[3, 3].Value = "35";
-
-            var bytes = excel.GetAsByteArray();
-
-            return File(bytes, "application/vnd." +
-                "openxmlformats-offiedocuments.spreadsheetml.sheet", "dosya.xlsx");
+            return File(_excelService.ExcelList(DestinationList()), "application/vnd.openxmlformats-offiedocuments.spreadsheetml.sheet", "YeniExcel.xlsx");
         }
         public IActionResult DestinationExcelReport()
         {
-            using (var excel = new XLWorkbook())
-            {
-                var workSheet = excel.Worksheets.Add("Tur Listesi");
-                workSheet.Cell(1, 1).Value = "Şehir";
-                workSheet.Cell(1, 2).Value = "Konaklama Süresi";
-                workSheet.Cell(1, 3).Value = "Fiyat";
-                workSheet.Cell(1, 4).Value = "Kapasite";
-
-                int rowCount = 2;
-                foreach (var item in DestinationList())
-                {
-                    workSheet.Cell(rowCount, 1).Value = item.City;
-                    workSheet.Cell(rowCount, 2).Value = item.DayNight;
-                    workSheet.Cell(rowCount, 3).Value = item.Price;
-                    workSheet.Cell(rowCount, 4).Value = item.Capacity;
-                    rowCount++;
-                }
-                using (var stream = new MemoryStream())
-                {
-                    excel.SaveAs(stream);
-                    var content = stream.ToArray();
-                    return File(content, "application/vnd." +
-                "openxmlformats-offiedocuments.spreadsheetml.sheet", "YeniListe.xlsx");
-                }
-            }
-            return View();
+            return File(_excelService.ExcelList(DestinationList()), "application/vnd." +
+        "openxmlformats-offiedocuments.spreadsheetml.sheet", "YeniListe.xlsx");
         }
     }
 }

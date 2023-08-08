@@ -1,0 +1,21 @@
+﻿
+@model TraversalCoreProje.Models.MailRequest
+<h1>Yeni Mail Gönderme Sayfası</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="ReceiverMail" class="control-label">Alıcı Mail Adresi</label>
+        <input asp-for="ReceiverMail" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Subject" class="control-label">Konu Başlığı</label>
+        <input asp-for="Subject" class="form-control" />
+    </div>
+    <br />
+     <div class="form-group">
+        <label asp-for="Body" class="control-label">Mesaj İçeriği</label>
+        <textarea cols="30" rows="5" asp-for="Body" class="form-control" ></textarea>
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Mail Gönder</button>
+</form>

@@ -12,7 +12,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
     public class CityController : Controller
     {
         /// <summary>
-        /// Ajax Örnek
+        /// Ajax Örnek2
         /// </summary>
         private readonly IDestinationService _destinationService;
 

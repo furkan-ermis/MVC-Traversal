@@ -11,6 +11,9 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
     [Area("Admin")]
     public class CityController : Controller
     {
+        /// <summary>
+        /// Ajax Örnek
+        /// </summary>
         private readonly IDestinationService _destinationService;
 
         public CityController(IDestinationService destinationService)
